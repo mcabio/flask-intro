@@ -31,8 +31,6 @@ def start_here():
       </html>
       """
 
-      
-
 
 @app.route('/hello')
 def say_hello():
@@ -48,8 +46,15 @@ def say_hello():
       <body>
         <h1>Hi There!</h1>
         <form action="/greet">
-          What's your name? <input type="text" name="person">
+          What's your name? 
+          <input type="text" name="person">
+          <label for="compliment">Choose a compliment:</label>
+          <select name="comp" id="compliment">
+          <option value="cute">Cute</option>
+          <option value="Pythonriffic">Pythonriffic</option>
+          <option value="incredible">Incredible</option>
           <input type="submit" value="Submit">
+          </select>
         </form>
       </body>
     </html>
@@ -62,7 +67,8 @@ def greet_person():
 
     player = request.args.get("person")
 
-    compliment = choice(AWESOMENESS)
+    compliment1 = choice(AWESOMENESS)
+    compliment = request.args.get("comp")
 
     return f"""
     <!doctype html>
