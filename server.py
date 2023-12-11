@@ -17,8 +17,21 @@ AWESOMENESS = [
 @app.route('/')
 def start_here():
     """Home page."""
+    
+    return """
+    <!doctype html>
+    <html>
+      <head>
+        <title>Hi! This is the home page.</title>
+      </head>
+      <body>
+        <h1> Hi! This is the Home Page.</h1>
+        <a href="http://localhost:5000/hello">Hello Page</a>
+      </body>
+      </html>
+      """
 
-    return "<!doctype html><html>Hi! This is the home page.</html>"
+      
 
 
 @app.route('/hello')
@@ -30,6 +43,7 @@ def say_hello():
     <html>
       <head>
         <title>Hi There!</title>
+        
       </head>
       <body>
         <h1>Hi There!</h1>
